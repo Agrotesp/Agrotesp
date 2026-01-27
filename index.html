@@ -487,37 +487,45 @@
                     </div>
                 </div>
 
-                <div class="contact-form-container">
+              <div class="contact-form-container">
                     <h3 style="margin-bottom: 24px; color: var(--primary);">Solicite um Orçamento</h3>
-                    <form id="contactForm">
+                    
+                    <!-- FORMULÁRIO INTEGRADO COM GOOGLE FORMS -->
+                    <form 
+                        id="contactForm" 
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSdA58ffTChUIMOC0lKDidBx1-C285VjV8UeomZGQycSy_WSdA/formResponse" 
+                        method="POST"
+                        target="hidden_iframe"
+                        onsubmit="submitForm()">
+                        
                         <div class="form-group">
                             <label class="form-label">Nome Completo *</label>
-                            <input type="text" class="form-input" required placeholder="Seu nome">
+                            <input type="text" name="entry.1657059646" class="form-input" required placeholder="Seu nome">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">WhatsApp / Telefone *</label>
-                            <input type="tel" class="form-input" required placeholder="(00) 00000-0000">
+                            <input type="tel" name="entry.889059636" class="form-input" required placeholder="(00) 00000-0000">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">E-mail</label>
-                            <input type="email" class="form-input" placeholder="seu@email.com">
+                            <input type="email" name="entry.975599603" class="form-input" placeholder="seu@email.com">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Cidade / Propriedade *</label>
-                            <input type="text" class="form-input" required placeholder="Cidade ou nome da fazenda">
+                            <input type="text" name="entry.1109955983" class="form-input" required placeholder="Cidade ou nome da fazenda">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Tamanho da Área (hectares) *</label>
-                            <input type="number" class="form-input" required placeholder="Ex: 50">
+                            <input type="number" name="entry.1893745459" class="form-input" required placeholder="Ex: 50">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Tipo de Cultura *</label>
-                            <select class="form-select" required>
+                            <select name="entry.1434813028" class="form-select" required>
                                 <option value="">Selecione</option>
                                 <option>Soja</option>
                                 <option>Milho</option>
@@ -529,15 +537,12 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Mensagem</label>
-                            <textarea class="form-textarea" placeholder="Conte-nos mais sobre sua necessidade..."></textarea>
-                        </div>
-
                         <button type="submit" class="btn btn-primary btn-submit">Enviar Solicitação</button>
                     </form>
+                    
+                    <!-- Iframe oculto para não redirecionar -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                 </div>
-            </div>
 
             <div class="info-box" style="margin-top: 60px;">
                 <div class="info-box-content">
@@ -580,7 +585,7 @@
                 <p>WhatsApp: (79) 99873-7632</p>
                 <p>Telefone: (79) 99873-7632</p>
                 <p>E-mail: agrotesp@gmail.com</p>
-                <p>Poço Verde - SE</p>
+                <p>Aracaju - SE</p>
             </div>
 
             <div class="footer-section">
@@ -597,6 +602,17 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+   <script src="script.js"></script>
+    
+    <!-- Script para exibir mensagem de sucesso -->
+    <script>
+        function submitForm() {
+            setTimeout(function() {
+                alert('✅ Solicitação enviada com sucesso! Entraremos em contato em breve.');
+                document.getElementById('contactForm').reset();
+            }, 500);
+            return true;
+        }
+    </script>
 </body>
 </html>
