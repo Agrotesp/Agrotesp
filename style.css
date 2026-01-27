@@ -1,0 +1,356 @@
+/* =====================================================
+   AGROTESP - IDENTIDADE VISUAL
+   Estilo moderno, tecnológico e profissional
+===================================================== */
+
+/* ---------- VARIÁVEIS GLOBAIS ---------- */
+:root {
+    --primary: #1E7F43;
+    --primary-light: #2FA866;
+    --secondary: #0B3C5D;
+    --secondary-light: #1F6FA3;
+    --accent: #2FA866;
+
+    --bg-light: #F4F6F8;
+    --bg-dark: #0B3C5D;
+
+    --text-dark: #2E2E2E;
+    --text-light: #FFFFFF;
+    --text-muted: #6B7280;
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+
+    --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+    --shadow-lg: 0 20px 50px rgba(0,0,0,0.12);
+
+    --transition: all 0.3s ease;
+}
+
+/* ---------- RESET BÁSICO ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ---------- NAVEGAÇÃO LATERAL ---------- */
+.nav-toggle {
+    position: fixed;
+    top: 24px;
+    left: 24px;
+    z-index: 1001;
+    background: var(--primary);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    margin: 5px 0;
+}
+
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(180deg, var(--secondary), #082F49);
+    color: #fff;
+    padding: 32px 24px;
+    transition: var(--transition);
+    z-index: 1000;
+}
+
+.side-nav.active {
+    left: 0;
+}
+
+.nav-logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-light);
+}
+
+.nav-tagline {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-top: 4px;
+}
+
+.nav-menu {
+    list-style: none;
+    margin-top: 40px;
+}
+
+.nav-menu li {
+    margin-bottom: 16px;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 14px;
+    display: block;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255,255,255,0.12);
+}
+
+/* ---------- OVERLAY ---------- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ---------- PÁGINAS ---------- */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: #fff;
+    padding: 120px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-logo {
+    max-width: 220px;
+    margin-bottom: 24px;
+}
+
+.hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    max-width: 680px;
+    font-size: 18px;
+    margin: 20px 0 32px;
+    opacity: 0.95;
+}
+
+/* ---------- BOTÕES ---------- */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary-light);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    border: 2px solid #fff;
+    color: #fff;
+    margin-left: 16px;
+}
+
+/* ---------- SEÇÕES ---------- */
+.content-section {
+    padding: 80px 24px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-tag {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.section-title {
+    font-size: 36px;
+    color: var(--secondary);
+}
+
+.section-subtitle {
+    max-width: 680px;
+    margin: 16px auto 0;
+    color: var(--text-muted);
+}
+
+/* ---------- CARDS ---------- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.card {
+    background: #fff;
+    padding: 32px 24px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+}
+
+/* ---------- INFO BOX ---------- */
+.info-box {
+    margin-top: 60px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    box-shadow: var(--shadow-md);
+}
+
+/* ---------- FAQ ---------- */
+.faq-item {
+    background: #fff;
+    border-radius: var(--radius-md);
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    padding: 0 20px 20px;
+    color: var(--text-muted);
+}
+
+/* ---------- FORM ---------- */
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #D1D5DB;
+    margin-top: 6px;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background: var(--bg-dark);
+    color: #fff;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding: 60px 24px;
+}
+
+.footer-logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--primary-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background: #082F49;
+    font-size: 14px;
+}
