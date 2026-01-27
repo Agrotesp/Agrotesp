@@ -3,600 +3,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGROTESP - Pulverização com Drones Agrícolas</title>
+    <title>AGROTESP | Pulverização com Drones Agrícolas</title>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Toggle -->
-    <button class="nav-toggle" id="navToggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
 
-    <!-- Side Navigation -->
-    <nav class="side-nav" id="sideNav">
-        <div class="nav-header">
-            <div class="nav-logo">AGROTESP</div>
-            <div class="nav-tagline">Pulverização com Drones</div>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#" data-page="home" class="nav-link active">Início</a></li>
-            <li><a href="#" data-page="quem-somos" class="nav-link">Quem Somos</a></li>
-            <li><a href="#" data-page="servicos" class="nav-link">Nossos Serviços</a></li>
-            <li><a href="#" data-page="tecnologia" class="nav-link">Tecnologia</a></li>
-            <li><a href="#" data-page="faq" class="nav-link">Perguntas Frequentes</a></li>
-            <li><a href="#" data-page="contato" class="nav-link">Contato</a></li>
-        </ul>
-    </nav>
+<!-- BOTÃO MENU -->
+<button class="nav-toggle" id="navToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
-    <!-- Overlay -->
-    <div class="overlay" id="overlay"></div>
-
-    <!-- HOME PAGE -->
-    <div class="page active" id="home">
-        <section class="hero">
-            <div class="hero-pattern"></div>
-            <div class="hero-content">
-                <img src="AGROTESP.png" alt="AGROTESP Logo" class="hero-logo">
-                <div class="hero-tag">Tecnologia de Precisão</div>
-                <h1>Pulverização Agrícola com Drones</h1>
-                <p class="hero-subtitle">Oferecemos serviços profissionais de pulverização aérea com drones para sua lavoura. Mais eficiência, economia e sustentabilidade para o seu negócio.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary" data-page="contato">Solicitar Orçamento</a>
-                    <a href="#" class="btn btn-secondary" data-page="servicos">Conheça o Serviço</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="section-header">
-                <div class="section-tag">Por Que Drones?</div>
-                <h2 class="section-title">Vantagens da Pulverização com Drones</h2>
-                <p class="section-subtitle">Tecnologia que transforma a forma de aplicar defensivos e aumenta seus resultados no campo</p>
-            </div>
-
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">⚡</div>
-                    <h3>Rapidez e Eficiência</h3>
-                    <p>Aplicação 4x mais rápida que métodos manuais. Cobrimos grandes áreas em pouco tempo, otimizando sua operação.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">💰</div>
-                    <h3>Economia Real</h3>
-                    <p>Redução de até 90% no uso de água e 30% em defensivos. Menor custo operacional e máximo aproveitamento de insumos.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🎯</div>
-                    <h3>Precisão na Aplicação</h3>
-                    <p>Tecnologia GPS RTK garante cobertura uniforme e aplicação exata onde é necessário, sem desperdício.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🌱</div>
-                    <h3>Proteção da Lavoura</h3>
-                    <p>Zero compactação do solo e sem danos às plantas. Aplicação pode ser feita mesmo com alta umidade no campo.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Segurança Total</h3>
-                    <p>Operador não tem contato direto com produtos químicos. Menor risco de acidentes e exposição.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🌍</div>
-                    <h3>Sustentabilidade</h3>
-                    <p>Menor consumo de recursos naturais, redução de deriva e aplicação consciente que respeita o meio ambiente.</p>
-                </div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-box-content">
-                    <h3>Atendemos Todo Tipo de Cultura</h3>
-                    <p>Trabalhamos com soja, milho, café, cana-de-açúcar, algodão, pastagens e diversas outras culturas. Nossa equipe tem expertise para adaptar a aplicação às necessidades específicas de cada lavoura, garantindo os melhores resultados.</p>
-                </div>
-            </div>
-        </section>
+<!-- MENU LATERAL -->
+<nav class="side-nav" id="sideNav">
+    <div class="nav-header">
+        <div class="nav-logo">AGROTESP</div>
+        <div class="nav-tagline">Pulverização com Drones</div>
     </div>
 
-    <!-- QUEM SOMOS PAGE -->
-    <div class="page" id="quem-somos">
-        <section class="content-section">
-            <div class="section-header">
-                <div class="section-tag">Nossa Empresa</div>
-                <h2 class="section-title">Quem Somos</h2>
+    <ul class="nav-menu">
+        <li><a href="#" class="nav-link active" data-page="home">Início</a></li>
+        <li><a href="#" class="nav-link" data-page="quem-somos">Quem Somos</a></li>
+        <li><a href="#" class="nav-link" data-page="servicos">Serviços</a></li>
+        <li><a href="#" class="nav-link" data-page="tecnologia">Tecnologia</a></li>
+        <li><a href="#" class="nav-link" data-page="faq">FAQ</a></li>
+        <li><a href="#" class="nav-link" data-page="contato">Contato</a></li>
+    </ul>
+</nav>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ================= HOME ================= -->
+<div class="page active" id="home">
+    <section class="hero">
+        <div class="hero-pattern"></div>
+
+        <div class="hero-content">
+            <img src="AGROTESP.png" alt="AGROTESP Logo" class="hero-logo">
+
+            <div class="hero-tag">Tecnologia de Precisão no Campo</div>
+
+            <h1>Pulverização Agrícola com Drones</h1>
+
+            <p class="hero-subtitle">
+                Aplicação aérea profissional com máxima precisão, economia de insumos
+                e respeito ao meio ambiente. Mais produtividade para sua lavoura.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary" data-page="contato">Solicitar Orçamento</a>
+                <a href="#" class="btn btn-secondary" data-page="servicos">Conhecer Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-header">
+            <div class="section-tag">Por que usar drones?</div>
+            <h2 class="section-title">Vantagens da Pulverização Aérea</h2>
+            <p class="section-subtitle">
+                Tecnologia moderna que reduz custos, aumenta a eficiência
+                e melhora o controle da aplicação.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Alta Produtividade</h3>
+                <p>Pulverização até 4x mais rápida que métodos tradicionais.</p>
             </div>
 
-            <div class="company-info">
-                <img src="AGROTESP.png" alt="AGROTESP Logo" class="company-logo-img">
-                <h3 class="company-name">AGROTESP PULVERIZAÇÃO</h3>
-                <p class="company-description">
-                    Somos uma empresa especializada em pulverização agrícola com drones, comprometida em oferecer tecnologia de ponta para produtores rurais que buscam eficiência, economia e resultados superiores em suas lavouras.
+            <div class="card">
+                <div class="card-icon">💧</div>
+                <h3>Economia de Água</h3>
+                <p>Redução de até 90% no consumo de água por hectare.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎯</div>
+                <h3>Precisão Milimétrica</h3>
+                <p>GPS RTK com precisão centimétrica na aplicação.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌱</div>
+                <h3>Preserva a Lavoura</h3>
+                <p>Sem compactação do solo e sem danos às plantas.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>Mais Segurança</h3>
+                <p>Operador sem contato direto com defensivos agrícolas.</p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌍</div>
+                <h3>Sustentável</h3>
+                <p>Aplicação consciente com menor impacto ambiental.</p>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-content">
+                <h3>Atendemos Diversas Culturas</h3>
+                <p>
+                    Soja, milho, café, cana-de-açúcar, algodão, pastagens
+                    e outras culturas agrícolas.
                 </p>
-
-                <div class="company-details">
-                    <div class="detail-item">
-                        <div class="detail-label">Atuação</div>
-                        <div class="detail-value">Sealba</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Especialidade</div>
-                        <div class="detail-value">Pulverização Aérea</div>
-                    </div>
-                    <div class="detail-item">
-                        <div class="detail-label">Experiência</div>
-                        <div class="detail-value">Equipe Qualificada</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-detail">
-                <h3>Nossa Missão</h3>
-                <p>Proporcionar aos produtores rurais acesso à tecnologia mais moderna de pulverização agrícola, contribuindo para o aumento da produtividade, redução de custos e práticas sustentáveis no campo.</p>
-
-                <h3 style="margin-top: 40px;">Nossos Valores</h3>
-                <ul>
-                    <li><strong>Compromisso com Resultados:</strong> Seu sucesso é nosso objetivo principal</li>
-                    <li><strong>Qualidade e Precisão:</strong> Cada aplicação é executada com máximo cuidado técnico</li>
-                    <li><strong>Transparência:</strong> Comunicação clara sobre processos, custos e resultados</li>
-                    <li><strong>Segurança:</strong> Operações 100% dentro das normas e regulamentações</li>
-                    <li><strong>Sustentabilidade:</strong> Uso consciente de recursos e respeito ao meio ambiente</li>
-                </ul>
-            </div>
-
-            <div class="values-grid">
-                <div class="value-item">
-                    <div class="value-icon">🎓</div>
-                    <h4>Equipe Qualificada</h4>
-                    <p>Operadores certificados pela ANAC com treinamento contínuo em técnicas de pulverização e segurança operacional.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">🚁</div>
-                    <h4>Equipamentos Modernos</h4>
-                    <p>Drones profissionais de última geração, com manutenção rigorosa e tecnologia de precisão.</p>
-                </div>
-                <div class="value-item">
-                    <div class="value-icon">📞</div>
-                    <h4>Atendimento Personalizado</h4>
-                    <p>Cada cliente recebe atenção especial, com soluções adaptadas às necessidades de sua propriedade.</p>
-                </div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-box-content">
-                    <h3>Conformidade e Legalização</h3>
-                    <p>Operamos em total conformidade com as normas da ANAC (Agência Nacional de Aviação Civil), MAPA (Ministério da Agricultura) e DECEA (Departamento de Controle do Espaço Aéreo). Todos nossos equipamentos são homologados e nossa equipe é devidamente certificada.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- SERVICOS PAGE -->
-    <div class="page" id="servicos">
-        <section class="content-section">
-            <div class="section-header">
-                <div class="section-tag">O Que Oferecemos</div>
-                <h2 class="section-title">Nossos Serviços de Pulverização</h2>
-                <p class="section-subtitle">Soluções completas para diferentes tipos de aplicação na sua lavoura</p>
-            </div>
-
-            <div class="service-detail">
-                <h3>🚁 Pulverização Agrícola com Drones</h3>
-                <p>Serviço principal da AGROTESP: aplicação aérea profissional de defensivos agrícolas, herbicidas, fungicidas, inseticidas e fertilizantes foliares utilizando drones de pulverização de alta performance.</p>
-                
-                <h4>Como Funciona o Serviço</h4>
-                <ul>
-                    <li><strong>1. Contato Inicial:</strong> Entre em contato conosco via WhatsApp, telefone ou formulário</li>
-                    <li><strong>2. Análise da Área:</strong> Avaliamos o tamanho da área, tipo de cultura e necessidades</li>
-                    <li><strong>3. Orçamento Personalizado:</strong> Enviamos proposta detalhada com valores e prazos</li>
-                    <li><strong>4. Agendamento:</strong> Definimos a melhor data conforme condições climáticas</li>
-                    <li><strong>5. Execução:</strong> Nossa equipe realiza a pulverização com máxima eficiência</li>
-                    <li><strong>6. Relatório Final:</strong> Entregamos documentação completa da aplicação</li>
-                </ul>
-
-                <h4>Tipos de Aplicação que Realizamos</h4>
-                <ul>
-                    <li>Aplicação de herbicidas pré e pós-emergentes</li>
-                    <li>Fungicidas para controle de doenças</li>
-                    <li>Inseticidas para combate a pragas</li>
-                    <li>Fertilizantes foliares e nutricionais</li>
-                    <li>Dessecação pré-colheita</li>
-                    <li>Aplicação de maturadores</li>
-                </ul>
-
-                <h4>Culturas Atendidas</h4>
-                <ul>
-                    <li>Soja e outras leguminosas</li>
-                    <li>Milho e sorgo</li>
-                    <li>Café (arábica e robusta)</li>
-                    <li>Cana-de-açúcar</li>
-                    <li>Algodão</li>
-                    <li>Pastagens e forrageiras</li>
-                    <li>Hortaliças e outras culturas (consulte-nos)</li>
-                </ul>
-            </div>
-
-            <div class="service-detail">
-                <h3>📊 Vantagens Técnicas da Nossa Aplicação</h3>
-                
-                <h4>Especificações Operacionais</h4>
-                <ul>
-                    <li><strong>Capacidade de cobertura:</strong> 80 a 100 hectares por dia</li>
-                    <li><strong>Largura de faixa:</strong> 4 a 7 metros por passada</li>
-                    <li><strong>Altura de voo:</strong> 2 a 4 metros acima da cultura</li>
-                    <li><strong>Velocidade:</strong> 4 a 7 m/s (ajustável conforme necessidade)</li>
-                    <li><strong>Volume de calda:</strong> 5 a 15 litros por hectare</li>
-                    <li><strong>Tamanho de gota:</strong> 150 a 300 micrômetros (controlável)</li>
-                </ul>
-
-                <h4>Diferenciais da Nossa Tecnologia</h4>
-                <ul>
-                    <li><strong>GPS RTK:</strong> Precisão de 2-5 cm para cobertura perfeita</li>
-                    <li><strong>Bicos inteligentes:</strong> Ajuste automático de vazão</li>
-                    <li><strong>Sistema anti-deriva:</strong> Aplicação próxima ao alvo</li>
-                    <li><strong>Voo automatizado:</strong> Rotas pré-programadas com sobreposição zero</li>
-                    <li><strong>Monitoramento em tempo real:</strong> Acompanhamento de toda operação</li>
-                </ul>
-            </div>
-
-            <div class="info-box">
-                <div class="info-box-content">
-                    <h3>Por Que Escolher a AGROTESP?</h3>
-                    <p><strong>Experiência Comprovada:</strong> Equipe treinada com centenas de hectares pulverizados | <strong>Equipamentos Premium:</strong> Drones profissionais de última geração | <strong>Atendimento Ágil:</strong> Resposta rápida e flexibilidade de agenda | <strong>Preço Competitivo:</strong> Melhor custo-benefício da região | <strong>Suporte Completo:</strong> Orientação técnica antes, durante e depois da aplicação</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- TECNOLOGIA PAGE -->
-    <div class="page" id="tecnologia">
-        <section class="content-section">
-            <div class="section-header">
-                <div class="section-tag">Nossos Equipamentos</div>
-                <h2 class="section-title">Tecnologia de Ponta</h2>
-                <p class="section-subtitle">Trabalhamos com os melhores drones e sistemas de pulverização do mercado</p>
-            </div>
-
-            <div class="tech-specs">
-                <div class="spec-item">
-                    <div class="spec-label">Capacidade do Tanque</div>
-                    <div class="spec-value">40 litros</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-label">Autonomia de Voo</div>
-                    <div class="spec-value">7-10 min</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-label">Precisão GPS</div>
-                    <div class="spec-value">± 2-5 cm</div>
-                </div>
-                <div class="spec-item">
-                    <div class="spec-label">Largura Efetiva</div>
-                    <div class="spec-value">4-7 metros</div>
-                </div>
-            </div>
-
-            <div class="service-detail">
-                <h3>Nossos Drones de Pulverização</h3>
-                <p>Utilizamos drones agrícolas profissionais específicos para pulverização, equipados com:</p>
-                <ul>
-                    <li><strong>Sistema de pulverização de alta precisão</strong> com bicos atomizadores ajustáveis</li>
-                    <li><strong>Tanque de alta capacidade</strong> em material resistente a produtos químicos</li>
-                    <li><strong>Bomba peristáltica</strong> para controle preciso da vazão</li>
-                    <li><strong>Sensores de fluxo</strong> que garantem aplicação uniforme</li>
-                    <li><strong>Sistema de downwash</strong> que empurra a calda até a base da planta</li>
-                </ul>
-
-                <h3 style="margin-top: 40px;">Tecnologia de Navegação</h3>
-                <ul>
-                    <li><strong>GPS RTK (Real Time Kinematic):</strong> Precisão centimétrica em tempo real</li>
-                    <li><strong>Planejamento automático de rotas:</strong> Software calcula a melhor trajetória</li>
-                    <li><strong>Sensores de obstáculos:</strong> Radar e visão computacional para segurança</li>
-                    <li><strong>Retorno automático (RTH):</strong> Drone volta sozinho em caso de necessidade</li>
-                    <li><strong>Telemetria completa:</strong> Monitoramento de bateria, velocidade, altura e mais</li>
-                </ul>
-
-                <h3 style="margin-top: 40px;">Controle de Qualidade</h3>
-                <ul>
-                    <li>Calibração dos bicos antes de cada operação</li>
-                    <li>Teste de vazão e uniformidade de distribuição</li>
-                    <li>Verificação das condições climáticas (vento, temperatura, umidade)</li>
-                    <li>Registro completo de dados da aplicação</li>
-                    <li>Manutenção preventiva rigorosa dos equipamentos</li>
-                </ul>
-            </div>
-
-            <div class="cards-grid">
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Segurança Operacional</h3>
-                    <p>Todos os procedimentos seguem protocolos de segurança rigorosos. Operações apenas com condições climáticas favoráveis.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">📋</div>
-                    <h3>Documentação Completa</h3>
-                    <p>Fornecemos relatório detalhado de cada aplicação: área coberta, produto aplicado, condições climáticas e dosagem.</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">⚙️</div>
-                    <h3>Manutenção Preventiva</h3>
-                    <p>Nossa frota passa por manutenção regular e inspeções antes de cada operação para garantir máxima confiabilidade.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- FAQ PAGE -->
-    <div class="page" id="faq">
-        <section class="content-section">
-            <div class="section-header">
-                <div class="section-tag">Tire Suas Dúvidas</div>
-                <h2 class="section-title">Perguntas Frequentes</h2>
-                <p class="section-subtitle">Respostas para as principais questões sobre pulverização com drones</p>
-            </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Quanto custa o serviço de pulverização com drone?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>O valor varia conforme o tamanho da área, tipo de cultura, produto a ser aplicado e localização da propriedade. Em média, o custo fica entre R$ 40 e R$ 80 por hectare. Entre em contato conosco para receber um orçamento personalizado sem compromisso!</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Qual o tamanho mínimo de área para atendimento?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Atendemos áreas a partir de 10 hectares. Para áreas menores, consulte-nos para avaliarmos a viabilidade técnica e econômica do serviço.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>O drone funciona em qualquer condição climática?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Não. Para garantir eficiência e segurança, só operamos com condições favoráveis: vento abaixo de 15 km/h, sem chuva, temperatura adequada e umidade relativa do ar acima de 55%. Essas condições garantem melhor penetração do produto e menor deriva.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Preciso fornecer o produto ou vocês levam?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Normalmente o cliente fornece o produto (defensivo, fertilizante, etc.) conforme recomendação do seu agrônomo. Nós realizamos apenas a aplicação. Podemos orientar sobre a dosagem adequada para pulverização com drone.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Quanto tempo leva para pulverizar minha área?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Dependendo das condições, conseguimos pulverizar entre 80 e 100 hectares por dia. Uma área de 100 hectares, por exemplo, pode ser concluída em 1 a 2 dias de operação.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>O drone realmente economiza produto?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim! A pulverização com drone utiliza volume de calda muito menor (5-15 litros/ha contra 100-200 litros/ha em métodos tradicionais), o que representa economia de até 90% em água e até 30% em defensivos, mantendo ou até melhorando a eficácia.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>É seguro para o operador?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Muito mais seguro! O piloto opera o drone a distância, sem contato direto com os produtos químicos. Isso reduz drasticamente os riscos de intoxicação e acidentes relacionados à exposição.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Vocês atendem em qual região?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Atuamos principalmente na região de Sergipe e arredores. Para localizações mais distantes, consulte-nos para verificarmos a viabilidade de deslocamento.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como faço para contratar o serviço?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>É muito simples! Entre em contato conosco via WhatsApp, telefone ou pelo formulário no site. Informe o tamanho da área, tipo de cultura e localização. Faremos uma avaliação e enviaremos um orçamento personalizado em até 24 horas.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>O serviço tem garantia?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Garantimos a qualidade da aplicação seguindo todas as boas práticas agronômicas. Fornecemos relatório completo da operação. A eficácia do produto depende do produto escolhido, dosagem e momento de aplicação (responsabilidade do agrônomo).</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="info-box">
-                <div class="info-box-content">
-                    <h3>Ainda tem dúvidas?</h3>
-                    <p>Nossa equipe está pronta para esclarecer qualquer questão! Entre em contato conosco pelo WhatsApp, telefone ou e-mail. Teremos prazer em ajudar você a entender como a pulverização com drone pode beneficiar sua propriedade.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- CONTATO PAGE -->
-    <div class="page" id="contato">
-        <section class="content-section">
-            <div class="section-header">
-                <div class="section-tag">Fale Conosco</div>
-                <h2 class="section-title">Entre em Contato</h2>
-                <p class="section-subtitle">Estamos prontos para atender você e levar tecnologia para sua lavoura</p>
-            </div>
-
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <div class="contact-icon">📱</div>
-                        <h3>WhatsApp</h3>
-                        <p class="contact-value">(79) 99873-7632</p>
-                        <p class="contact-description">Atendimento rápido e direto</p>
-                        <a href="https://wa.me/5579998737632" target="_blank" class="btn btn-primary" style="margin-top: 16px;">Chamar no WhatsApp</a>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">📞</div>
-                        <h3>Telefone</h3>
-                        <p class="contact-value">(79) 99873-7632</p>
-                        <p class="contact-description">Ligação direta</p>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">✉️</div>
-                        <h3>E-mail</h3>
-                        <p class="contact-value">contato@agrotesp.com.br</p>
-                        <p class="contact-description">Envie sua mensagem</p>
-                    </div>
-
-                    <div class="contact-card">
-                        <div class="contact-icon">📍</div>
-                        <h3>Localização</h3>
-                        <p class="contact-value">Sergipe - SE</p>
-                        <p class="contact-description">Atendemos diversas regiões</p>
-                    </div>
-                </div>
-
-                <div class="contact-form-container">
-                    <h3 style="margin-bottom: 24px; color: var(--primary);">Solicite um Orçamento</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label class="form-label">Nome Completo *</label>
-                            <input type="text" class="form-input" required placeholder="Seu nome">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">WhatsApp / Telefone *</label>
-                            <input type="tel" class="form-input" required placeholder="(00) 00000-0000">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">E-mail</label>
-                            <input type="email" class="form-input" placeholder="seu@email.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Cidade / Propriedade *</label>
-                            <input type="text" class="form-input" required placeholder="Cidade ou nome da fazenda">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Tamanho da Área (hectares) *</label>
-                            <input type="number" class="form-input" required placeholder="Ex: 50">
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Tipo de Cultura *</label>
-                            <select class="form-select" required>
-                                <option value="">Selecione</option>
-                                <option>Soja</option>
-                                <option>Milho</option>
-                                <option>Café</option>
-                                <option>Cana-de-açúcar</option>
-                                <option>Algodão</option>
-                                <option>Pastagem</option>
-                                <option>Outra</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="form-label">Mensagem</label>
-                            <textarea class="form-textarea" placeholder="Conte-nos mais sobre sua necessidade..."></textarea>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-submit">Enviar Solicitação</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="info-box" style="margin-top: 60px;">
-                <div class="info-box-content">
-                    <h3>Horário de Atendimento</h3>
-                    <p><strong>Segunda a Sexta:</strong> 7h às 18h<br>
-                    <strong>Sábado:</strong> 7h às 12h<br>
-                    <strong>Domingo e Feriados:</strong> WhatsApp para emergências</p>
-                    <p style="margin-top: 20px;">Respondemos todas as solicitações em até 24 horas. Para atendimento urgente, contate-nos via WhatsApp!</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <img src="AGROTESP.png" alt="AGROTESP Logo" class="footer-logo-img">
-                <div class="footer-logo">AGROTESP</div>
-                <p>Pulverização agrícola profissional com drones. Tecnologia, eficiência e resultados para sua lavoura.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" title="Facebook">📘</a>
-                    <a href="#" class="social-link" title="Instagram">📸</a>
-                    <a href="#" class="social-link" title="YouTube">▶️</a>
-                    <a href="#" class="social-link" title="WhatsApp">💬</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h4>Navegação</h4>
-                <a href="#" data-page="home">Início</a>
-                <a href="#" data-page="quem-somos">Quem Somos</a>
-                <a href="#" data-page="servicos">Serviços</a>
-                <a href="#" data-page="tecnologia">Tecnologia</a>
-                <a href="#" data-page="faq">Perguntas Frequentes</a>
-            </div>
-
-            <div class="footer-section">
-                <h4>Contato</h4>
-                <p>WhatsApp: (79) 99873-7632</p>
-                <p>Telefone: (79) 99873-7632</p>
-                <p>E-mail: agrotesp@gmail.com</p>
-                <p>Sergipe - SE</p>
-            </div>
-
-            <div class="footer-section">
-                <h4>Atendimento</h4>
-                <p>Segunda a Sexta: 7h às 18h</p>
-                <p>Sábado: 7h às 12h</p>
-                <p style="margin-top: 16px; color: var(--accent); font-weight: 600;">Orçamento Gratuito</p>
-                <a href="#" data-page="contato" class="btn btn-primary" style="margin-top: 12px; display: inline-block;">Solicitar Orçamento</a>
             </div>
         </div>
+    </section>
+</div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 AGROTESP - Pulverização com Drones. Todos os direitos reservados.</p>
+<!-- ================= QUEM SOMOS ================= -->
+<div class="page" id="quem-somos">
+    <section class="content-section">
+        <div class="section-header">
+            <div class="section-tag">Sobre a Empresa</div>
+            <h2 class="section-title">Quem Somos</h2>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="info-box">
+            <div class="info-box-content">
+                <h3>AGROTESP Pulverização</h3>
+                <p>
+                    Empresa especializada em pulverização agrícola com drones,
+                    levando tecnologia de ponta ao produtor rural.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= SERVIÇOS ================= -->
+<div class="page" id="servicos">
+    <section class="content-section">
+        <div class="section-header">
+            <div class="section-tag">O que fazemos</div>
+            <h2 class="section-title">Nossos Serviços</h2>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>🚁 Pulverização Aérea</h3>
+                <p>Aplicação de herbicidas, fungicidas, inseticidas e fertilizantes.</p>
+            </div>
+
+            <div class="card">
+                <h3>📊 Relatórios Técnicos</h3>
+                <p>Documentação completa de cada operação realizada.</p>
+            </div>
+
+            <div class="card">
+                <h3>⚙️ Ajuste de Dosagem</h3>
+                <p>Configuração precisa conforme a cultura e o produto.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= TECNOLOGIA ================= -->
+<div class="page" id="tecnologia">
+    <section class="content-section">
+        <div class="section-header">
+            <div class="section-tag">Inovação</div>
+            <h2 class="section-title">Tecnologia de Ponta</h2>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>GPS RTK</h3>
+                <p>Precisão de 2 a 5 cm para máxima eficiência.</p>
+            </div>
+
+            <div class="card">
+                <h3>Drones Profissionais</h3>
+                <p>Equipamentos agrícolas de última geração.</p>
+            </div>
+
+            <div class="card">
+                <h3>Controle Total</h3>
+                <p>Monitoramento em tempo real da operação.</p>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= FAQ ================= -->
+<div class="page" id="faq">
+    <section class="content-section">
+        <div class="section-header">
+            <div class="section-tag">Dúvidas</div>
+            <h2 class="section-title">Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Quanto custa o serviço?</h3>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>O valor varia conforme área, cultura e localização.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ================= CONTATO ================= -->
+<div class="page" id="contato">
+    <section class="content-section">
+        <div class="section-header">
+            <div class="section-tag">Fale Conosco</div>
+            <h2 class="section-title">Contato</h2>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-content">
+                <h3>WhatsApp</h3>
+                <p>(79) 99873-7632</p>
+                <a href="https://wa.me/5579998737632" target="_blank" class="btn btn-primary">
+                    Chamar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <div class="footer-logo">AGROTESP</div>
+            <p>Pulverização agrícola com drones.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contato</h4>
+            <p>Sergipe - SE</p>
+            <p>(79) 99873-7632</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 AGROTESP - Todos os direitos reservados</p>
+    </div>
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
 </body>
 </html>
