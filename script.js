@@ -1,12 +1,12 @@
-/* =====================================================
-   AGROTESP - INTERAÇÕES UX
-===================================================== */
+/* ======================================================
+   AGROTESP - JAVASCRIPT INSTITUCIONAL
+====================================================== */
 
-/* ---------- MENU LATERAL ---------- */
 const navToggle = document.getElementById('navToggle');
 const sideNav = document.getElementById('sideNav');
 const overlay = document.getElementById('overlay');
 
+/* MENU LATERAL */
 navToggle.addEventListener('click', () => {
     sideNav.classList.add('active');
     overlay.classList.add('active');
@@ -17,19 +17,19 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 
-/* ---------- TROCA DE PÁGINAS ---------- */
-const links = document.querySelectorAll('[data-page]');
+/* NAVEGAÇÃO ENTRE PÁGINAS */
+const navLinks = document.querySelectorAll('[data-page]');
 const pages = document.querySelectorAll('.page');
 
-links.forEach(link => {
+navLinks.forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
         const target = link.dataset.page;
 
-        pages.forEach(p => p.classList.remove('active'));
+        pages.forEach(page => page.classList.remove('active'));
         document.getElementById(target).classList.add('active');
 
-        links.forEach(l => l.classList.remove('active'));
+        navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
 
         sideNav.classList.remove('active');
@@ -39,18 +39,18 @@ links.forEach(link => {
     });
 });
 
-/* ---------- FAQ ACCORDION ---------- */
+/* FAQ ACCORDION */
 document.querySelectorAll('.faq-question').forEach(item => {
     item.addEventListener('click', () => {
         const answer = item.nextElementSibling;
         const icon = item.querySelector('.faq-icon');
 
-        const open = answer.style.display === 'block';
+        const isOpen = answer.style.display === 'block';
 
         document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
         document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
 
-        if (!open) {
+        if (!isOpen) {
             answer.style.display = 'block';
             icon.textContent = '−';
         }
