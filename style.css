@@ -1,35 +1,32 @@
-/* =====================================================
-   AGROTESP - IDENTIDADE VISUAL
-   Estilo moderno, tecnológico e profissional
-===================================================== */
+/* =========================================================
+   AGROTESP - CSS INSTITUCIONAL PROFISSIONAL
+   Foco: Agro + Tecnologia + Confiança
+========================================================= */
 
-/* ---------- VARIÁVEIS GLOBAIS ---------- */
+/* ================= VARIÁVEIS ================= */
 :root {
-    --primary: #1E7F43;
-    --primary-light: #2FA866;
-    --secondary: #0B3C5D;
-    --secondary-light: #1F6FA3;
-    --accent: #2FA866;
+    --green: #1E7F43;
+    --green-light: #2FA866;
+    --blue-dark: #0B3C5D;
+    --blue: #1F6FA3;
 
     --bg-light: #F4F6F8;
-    --bg-dark: #0B3C5D;
+    --bg-white: #FFFFFF;
 
     --text-dark: #2E2E2E;
-    --text-light: #FFFFFF;
     --text-muted: #6B7280;
 
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 22px;
 
-    --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
-    --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
-    --shadow-lg: 0 20px 50px rgba(0,0,0,0.12);
+    --shadow-sm: 0 6px 16px rgba(0,0,0,0.06);
+    --shadow-md: 0 12px 32px rgba(0,0,0,0.10);
 
-    --transition: all 0.3s ease;
+    --transition: 0.3s ease;
 }
 
-/* ---------- RESET BÁSICO ---------- */
+/* ================= RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -43,26 +40,26 @@ body {
     line-height: 1.6;
 }
 
-/* ---------- NAVEGAÇÃO LATERAL ---------- */
+/* ================= MENU LATERAL ================= */
 .nav-toggle {
     position: fixed;
-    top: 24px;
-    left: 24px;
-    z-index: 1001;
-    background: var(--primary);
+    top: 20px;
+    left: 20px;
+    background: var(--green);
     border: none;
-    border-radius: var(--radius-sm);
     padding: 12px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
+    z-index: 1100;
     box-shadow: var(--shadow-md);
 }
 
 .nav-toggle span {
     display: block;
-    width: 24px;
+    width: 22px;
     height: 3px;
     background: #fff;
-    margin: 5px 0;
+    margin: 4px 0;
 }
 
 .side-nav {
@@ -71,11 +68,10 @@ body {
     left: -280px;
     width: 280px;
     height: 100vh;
-    background: linear-gradient(180deg, var(--secondary), #082F49);
-    color: #fff;
+    background: linear-gradient(180deg, var(--blue-dark), #082F49);
     padding: 32px 24px;
     transition: var(--transition);
-    z-index: 1000;
+    z-index: 1050;
 }
 
 .side-nav.active {
@@ -85,13 +81,13 @@ body {
 .nav-logo {
     font-size: 28px;
     font-weight: 700;
-    color: var(--primary-light);
+    color: var(--green-light);
 }
 
 .nav-tagline {
     font-size: 14px;
-    opacity: 0.85;
-    margin-top: 4px;
+    color: #d1e7f5;
+    margin-top: 6px;
 }
 
 .nav-menu {
@@ -99,34 +95,29 @@ body {
     margin-top: 40px;
 }
 
-.nav-menu li {
-    margin-bottom: 16px;
-}
-
 .nav-link {
+    display: block;
     color: #fff;
     text-decoration: none;
-    font-weight: 500;
-    padding: 10px 14px;
-    display: block;
+    padding: 12px 14px;
     border-radius: var(--radius-sm);
     transition: var(--transition);
 }
 
 .nav-link:hover,
 .nav-link.active {
-    background: rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.15);
 }
 
-/* ---------- OVERLAY ---------- */
+/* ================= OVERLAY ================= */
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.55);
     opacity: 0;
     visibility: hidden;
     transition: var(--transition);
-    z-index: 999;
+    z-index: 1000;
 }
 
 .overlay.active {
@@ -134,29 +125,20 @@ body {
     visibility: visible;
 }
 
-/* ---------- PÁGINAS ---------- */
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-/* ---------- HERO ---------- */
+/* ================= HERO ================= */
 .hero {
-    background: linear-gradient(135deg, var(--secondary), var(--primary));
-    color: #fff;
+    background: linear-gradient(135deg, var(--blue-dark), var(--green));
     padding: 120px 24px;
+    color: #fff;
     position: relative;
-    overflow: hidden;
 }
 
 .hero-pattern {
     position: absolute;
     inset: 0;
     background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
-    background-size: 24px 24px;
+    background-size: 26px 26px;
+    opacity: 0.25;
 }
 
 .hero-content {
@@ -164,38 +146,45 @@ body {
     margin: auto;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
+/* LOGO LEGÍVEL */
 .hero-logo {
-    max-width: 220px;
-    margin-bottom: 24px;
+    background: rgba(255,255,255,0.95);
+    padding: 18px 28px;
+    border-radius: 18px;
+    max-width: 240px;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.25);
+    margin-bottom: 28px;
 }
 
 .hero-tag {
     display: inline-block;
-    background: rgba(255,255,255,0.15);
-    padding: 6px 14px;
+    background: rgba(255,255,255,0.18);
+    padding: 6px 16px;
     border-radius: 999px;
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    line-height: 1.2;
+    font-size: 46px;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 14px rgba(0,0,0,0.35);
 }
 
 .hero-subtitle {
-    max-width: 680px;
+    max-width: 720px;
+    margin: auto;
     font-size: 18px;
-    margin: 20px 0 32px;
     opacity: 0.95;
 }
 
-/* ---------- BOTÕES ---------- */
+/* ================= BOTÕES ================= */
 .btn {
     display: inline-block;
-    padding: 14px 28px;
+    padding: 14px 30px;
     border-radius: var(--radius-md);
     font-weight: 600;
     text-decoration: none;
@@ -203,7 +192,7 @@ body {
 }
 
 .btn-primary {
-    background: var(--primary-light);
+    background: var(--green-light);
     color: #fff;
 }
 
@@ -218,7 +207,7 @@ body {
     margin-left: 16px;
 }
 
-/* ---------- SEÇÕES ---------- */
+/* ================= SEÇÕES ================= */
 .content-section {
     padding: 80px 24px;
     max-width: 1200px;
@@ -231,23 +220,22 @@ body {
 }
 
 .section-tag {
-    color: var(--primary);
+    color: var(--green);
     font-weight: 600;
-    margin-bottom: 8px;
 }
 
 .section-title {
     font-size: 36px;
-    color: var(--secondary);
+    color: var(--blue-dark);
 }
 
 .section-subtitle {
-    max-width: 680px;
+    max-width: 720px;
     margin: 16px auto 0;
     color: var(--text-muted);
 }
 
-/* ---------- CARDS ---------- */
+/* ================= CARDS ================= */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -255,7 +243,7 @@ body {
 }
 
 .card {
-    background: #fff;
+    background: var(--bg-white);
     padding: 32px 24px;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-sm);
@@ -264,36 +252,30 @@ body {
 
 .card:hover {
     transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-md);
 }
 
 .card-icon {
     font-size: 36px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
-.card h3 {
-    color: var(--secondary);
-    margin-bottom: 10px;
-}
-
-/* ---------- INFO BOX ---------- */
+/* ================= INFO BOX ================= */
 .info-box {
     margin-top: 60px;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    background: linear-gradient(135deg, var(--green), var(--green-light));
     color: #fff;
-    border-radius: var(--radius-lg);
     padding: 48px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
 }
 
-/* ---------- FAQ ---------- */
+/* ================= FAQ ================= */
 .faq-item {
     background: #fff;
     border-radius: var(--radius-md);
     margin-bottom: 16px;
     box-shadow: var(--shadow-sm);
-    overflow: hidden;
 }
 
 .faq-question {
@@ -301,7 +283,6 @@ body {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .faq-answer {
@@ -310,7 +291,7 @@ body {
     color: var(--text-muted);
 }
 
-/* ---------- FORM ---------- */
+/* ================= FORM ================= */
 .form-input,
 .form-select,
 .form-textarea {
@@ -318,19 +299,18 @@ body {
     padding: 14px;
     border-radius: var(--radius-sm);
     border: 1px solid #D1D5DB;
-    margin-top: 6px;
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
+    border-color: var(--green);
     outline: none;
-    border-color: var(--primary);
 }
 
-/* ---------- FOOTER ---------- */
+/* ================= FOOTER ================= */
 footer {
-    background: var(--bg-dark);
+    background: var(--blue-dark);
     color: #fff;
     margin-top: 80px;
 }
@@ -345,7 +325,7 @@ footer {
 .footer-logo {
     font-size: 26px;
     font-weight: 700;
-    color: var(--primary-light);
+    color: var(--green-light);
 }
 
 .footer-bottom {
