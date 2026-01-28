@@ -475,7 +475,7 @@
                     <div class="contact-card">
                         <div class="contact-icon">✉️</div>
                         <h3>E-mail</h3>
-                        <p class="contact-value">contato@agrotesp.com.br</p>
+                        <p class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="07646869736673684766607568736274772964686a296575">[email&#160;protected]</a></p>
                         <p class="contact-description">Envie sua mensagem</p>
                     </div>
 
@@ -495,8 +495,7 @@
                         id="contactForm" 
                         action="https://docs.google.com/forms/d/e/1FAIpQLSdA58ffTChUIMOC0lKDidBx1-C285VjV8UeomZGQycSy_WSdA/formResponse" 
                         method="POST"
-                        target="hidden_iframe"
-                        onsubmit="submitForm()">
+                        target="hidden_iframe">
                         
                         <div class="form-group">
                             <label class="form-label">Nome Completo *</label>
@@ -584,7 +583,7 @@
                 <h4>Contato</h4>
                 <p>WhatsApp: (79) 99873-7632</p>
                 <p>Telefone: (79) 99873-7632</p>
-                <p>E-mail: agrotesp@gmail.com</p>
+                <p>E-mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="640503160b10011714240309050d084a070b09">[email&#160;protected]</a></p>
                 <p>Aracaju - SE</p>
             </div>
 
@@ -602,17 +601,22 @@
         </div>
     </footer>
 
- <script src="script.js"></script>
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
     
     <!-- Script para exibir mensagem de sucesso -->
-  <script>
-    function submitForm() {
-        setTimeout(function() {
-            alert('✅ Solicitação enviada com sucesso! Entraremos em contato em breve.');
-            document.getElementById('contactForm').reset();
-        }, 500);
-        return true;
-    }
-</script>
+    <script>
+        // Garante que o iframe está carregado
+        window.addEventListener('load', function() {
+            var form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    setTimeout(function() {
+                        alert('✅ Solicitação enviada com sucesso! Entraremos em contato em breve.');
+                        form.reset();
+                    }, 1000);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
