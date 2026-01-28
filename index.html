@@ -491,7 +491,7 @@
                     <h3 style="margin-bottom: 24px; color: var(--primary);">Solicite um Orçamento</h3>
                     
                     <!-- FORMULÁRIO INTEGRADO COM GOOGLE FORMS -->
-                   <form 
+                  <form 
                         id="contactForm" 
                         onsubmit="submitToGoogleForms(event); return false;">
                         
@@ -517,20 +517,20 @@
 
                         <div class="form-group">
                             <label class="form-label">Tamanho da Área (hectares) *</label>
-                            <input type="number" id="area" name="area" class="form-input" required placeholder="Ex: 50">
+                            <input type="text" id="area" name="area" class="form-input" required placeholder="Ex: 50">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Tipo de Cultura *</label>
                             <select id="cultura" name="cultura" class="form-select" required>
                                 <option value="">Selecione</option>
-                                <option>Soja</option>
-                                <option>Milho</option>
-                                <option>Café</option>
-                                <option>Cana-de-açúcar</option>
-                                <option>Algodão</option>
-                                <option>Pastagem</option>
-                                <option>Outra</option>
+                                <option value="Soja">Soja</option>
+                                <option value="Milho">Milho</option>
+                                <option value="Café">Café</option>
+                                <option value="Cana-de-açúcar">Cana-de-açúcar</option>
+                                <option value="Algodão">Algodão</option>
+                                <option value="Pastagem">Pastagem</option>
+                                <option value="Outra">Outra</option>
                             </select>
                         </div>
                 
@@ -542,7 +542,7 @@
                         <button type="submit" class="btn btn-primary btn-submit">Enviar Solicitação</button>
                     </form>
                 </div>
-
+                
             <div class="info-box" style="margin-top: 60px;">
                 <div class="info-box-content">
                     <h3>Horário de Atendimento</h3>
@@ -621,16 +621,16 @@
             const data = {
                 nome: formData.get('nome'),
                 telefone: formData.get('telefone'),
-                email: formData.get('email'),
+                email: formData.get('email') || '',
                 cidade: formData.get('cidade'),
                 area: formData.get('area'),
                 cultura: formData.get('cultura'),
-                mensagem: formData.get('mensagem')
+                mensagem: formData.get('mensagem') || ''
             };
             
             try {
                 // Envia para o Google Apps Script
-                const response = await fetch('https://script.google.com/macros/s/AKfycbxt1e2QJHNohy4CnPNBuHjbJjyghGOLRrsjrXE0Mwpk8HHJu8LLTlFr9Os9iP6rFcUf/exec', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxvOWytgPMbSLRkEzn2aSGRTS7IOBJoo4_TTbiQ4NC81zM75x1lKm4TmA3efK8s7Vv9/exec', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
@@ -639,7 +639,7 @@
                     body: JSON.stringify(data)
                 });
                 
-                // Mensagem de sucesso
+                // Mensagem de sucesso (modo no-cors sempre retorna opaque, então assumimos sucesso)
                 alert('✅ Solicitação enviada com sucesso!\n\nEntraremos em contato em breve pelo WhatsApp ou telefone informado.');
                 
                 // Limpa o formulário
