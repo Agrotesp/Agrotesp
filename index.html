@@ -496,7 +496,6 @@
                         action="https://docs.google.com/forms/d/e/1FAIpQLSdA58ffTChUIMOC0lKDidBx1-C285VjV8UeomZGQycSy_WSdA/formResponse" 
                         method="POST"
                         target="hidden_iframe"
-                        onsubmit="submitForm()">
                         
                         <div class="form-group">
                             <label class="form-label">Nome Completo *</label>
@@ -602,17 +601,19 @@
         </div>
     </footer>
 
-   <script src="script.js"></script>
+ <script src="script.js"></script>
     
     <!-- Script para exibir mensagem de sucesso -->
     <script>
-        function submitForm() {
-            setTimeout(function() {
-                alert('✅ Solicitação enviada com sucesso! Entraremos em contato em breve.');
-                document.getElementById('contactForm').reset();
-            }, 500);
-            return true;
-        }
+        // Garante que o iframe está carregado
+        window.addEventListener('load', function() {
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                setTimeout(function() {
+                    alert('✅ Solicitação enviada com sucesso! Entraremos em contato em breve.');
+                    document.getElementById('contactForm').reset();
+                }, 1000);
+            });
+        });
     </script>
 </body>
 </html>
