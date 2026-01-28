@@ -493,39 +493,36 @@
                     <!-- FORMULÁRIO INTEGRADO COM GOOGLE FORMS -->
                    <form 
                         id="contactForm" 
-                        action="https://docs.google.com/forms/d/e/1FAIpQLSdA58ffTChUIMOC0lKDidBx1-C285VjV8UeomZGQycSy_WSdA/formResponse" 
-                        method="POST"
-                        target="hidden_iframe"
-                        onsubmit="submitForm()">
+                        onsubmit="submitToGoogleForms(event); return false;">
                         
                         <div class="form-group">
                             <label class="form-label">Nome Completo *</label>
-                            <input type="text" name="entry.1657059646" class="form-input" required placeholder="Seu nome">
+                            <input type="text" id="nome" name="nome" class="form-input" required placeholder="Seu nome">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">WhatsApp / Telefone *</label>
-                            <input type="tel" name="entry.889059636" class="form-input" required placeholder="(00) 00000-0000">
+                            <input type="tel" id="telefone" name="telefone" class="form-input" required placeholder="(00) 00000-0000">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">E-mail</label>
-                            <input type="email" name="entry.975599603" class="form-input" placeholder="seu@email.com">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="seu@email.com">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Cidade / Propriedade *</label>
-                            <input type="text" name="entry.1109955983" class="form-input" required placeholder="Cidade ou nome da fazenda">
+                            <input type="text" id="cidade" name="cidade" class="form-input" required placeholder="Cidade ou nome da fazenda">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Tamanho da Área (hectares) *</label>
-                            <input type="number" name="entry.1893745459" class="form-input" required placeholder="Ex: 50">
+                            <input type="number" id="area" name="area" class="form-input" required placeholder="Ex: 50">
                         </div>
 
                         <div class="form-group">
                             <label class="form-label">Tipo de Cultura *</label>
-                            <select name="entry.1434813028" class="form-select" required>
+                            <select id="cultura" name="cultura" class="form-select" required>
                                 <option value="">Selecione</option>
                                 <option>Soja</option>
                                 <option>Milho</option>
@@ -539,14 +536,11 @@
                 
                         <div class="form-group">
                             <label class="form-label">Mensagem</label>
-                            <textarea name="entry.2109341009" class="form-textarea" placeholder="Conte-nos mais sobre sua necessidade..."></textarea>
+                            <textarea id="mensagem" name="mensagem" class="form-textarea" placeholder="Conte-nos mais sobre sua necessidade..."></textarea>
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-submit">Enviar Solicitação</button>
                     </form>
-                    
-                    <!-- Iframe oculto para não redirecionar -->
-                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                 </div>
 
             <div class="info-box" style="margin-top: 60px;">
@@ -607,16 +601,58 @@
         </div>
     </footer>
 
-   <script src="script.js"></script>
+ <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
     
-    <!-- Script para exibir mensagem de sucesso -->
+    <!-- Script de integração com Google Forms via Apps Script -->
     <script>
-        function submitForm() {
-            setTimeout(function() {
-                alert('✅ Solicitação enviada com sucesso! Entraremos em contato em breve.');
-                document.getElementById('contactForm').reset();
-            }, 500);
-            return true;
+        async function submitToGoogleForms(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const submitBtn = form.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            
+            // Desabilita o botão e mostra feedback
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Enviando...';
+            
+            // Coleta os dados do formulário
+            const formData = new FormData(form);
+            const data = {
+                nome: formData.get('nome'),
+                telefone: formData.get('telefone'),
+                email: formData.get('email'),
+                cidade: formData.get('cidade'),
+                area: formData.get('area'),
+                cultura: formData.get('cultura'),
+                mensagem: formData.get('mensagem')
+            };
+            
+            try {
+                // Envia para o Google Apps Script
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxt1e2QJHNohy4CnPNBuHjbJjyghGOLRrsjrXE0Mwpk8HHJu8LLTlFr9Os9iP6rFcUf/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                // Mensagem de sucesso
+                alert('✅ Solicitação enviada com sucesso!\n\nEntraremos em contato em breve pelo WhatsApp ou telefone informado.');
+                
+                // Limpa o formulário
+                form.reset();
+                
+            } catch (error) {
+                console.error('Erro:', error);
+                alert('❌ Erro ao enviar solicitação.\n\nPor favor, tente novamente ou entre em contato pelo WhatsApp: (79) 99873-7632');
+            } finally {
+                // Reabilita o botão
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
         }
     </script>
 </body>
