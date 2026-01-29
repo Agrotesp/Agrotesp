@@ -6,6 +6,12 @@
     <title>AGROTESP - Pulverização com Drones Agrícolas</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Crimson+Pro:wght@600;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("2jTeGSLsJ3gvQxhQ8");
+        })();
+    </script>
 </head>
 <body>
     <!-- Navigation Toggle -->
@@ -475,7 +481,7 @@
                     <div class="contact-card">
                         <div class="contact-icon">✉️</div>
                         <h3>E-mail</h3>
-                        <p class="contact-value">contato@agrotesp.com.br</p>
+                        <p class="contact-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7c1f1312081d08133c1d1b0e1308190f0c521f1311521e0e">[email&#160;protected]</a></p>
                         <p class="contact-description">Envie sua mensagem</p>
                     </div>
 
@@ -583,7 +589,7 @@
                 <h4>Contato</h4>
                 <p>WhatsApp: (79) 99873-7632</p>
                 <p>Telefone: (79) 99873-7632</p>
-                <p>E-mail: agrotesp@gmail.com</p>
+                <p>E-mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="87e6e0f5e8f3e2f4f7c7e0eae6eeeba9e4e8ea">[email&#160;protected]</a></p>
                 <p>Aracaju - SE</p>
             </div>
 
@@ -601,9 +607,9 @@
         </div>
     </footer>
 
- <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+ <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
     
-    <!-- Script de integração com Google Forms via Apps Script -->
+    <!-- Script de integração com EmailJS -->
     <script>
         async function submitToGoogleForms(event) {
             event.preventDefault();
@@ -616,30 +622,11 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Enviando...';
             
-            // Coleta os dados do formulário
-            const formData = new FormData(form);
-            const data = {
-                nome: formData.get('nome'),
-                telefone: formData.get('telefone'),
-                email: formData.get('email') || '',
-                cidade: formData.get('cidade'),
-                area: formData.get('area'),
-                cultura: formData.get('cultura'),
-                mensagem: formData.get('mensagem') || ''
-            };
-            
             try {
-                // Envia para o Google Apps Script
-                const response = await fetch('https://script.google.com/macros/s/AKfycbxvOWytgPMbSLRkEzn2aSGRTS7IOBJoo4_TTbiQ4NC81zM75x1lKm4TmA3efK8s7Vv9/exec', {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
+                // Envia via EmailJS
+                await emailjs.sendForm('AGROTESP', 'template_fixgg33', form);
                 
-                // Mensagem de sucesso (modo no-cors sempre retorna opaque, então assumimos sucesso)
+                // Mensagem de sucesso
                 alert('✅ Solicitação enviada com sucesso!\n\nEntraremos em contato em breve pelo WhatsApp ou telefone informado.');
                 
                 // Limpa o formulário
@@ -647,13 +634,3 @@
                 
             } catch (error) {
                 console.error('Erro:', error);
-                alert('❌ Erro ao enviar solicitação.\n\nPor favor, tente novamente ou entre em contato pelo WhatsApp: (79) 99873-7632');
-            } finally {
-                // Reabilita o botão
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalText;
-            }
-        }
-    </script>
-</body>
-</html>
