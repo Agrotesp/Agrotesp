@@ -1267,6 +1267,7 @@ footer {
   opacity: 0.7;
   animation: bounce 2s infinite;
   display: inline-block;
+  margin-top: 0px; /* controla distância do botão */
 }
 
 @keyframes bounce {
