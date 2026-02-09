@@ -1,8 +1,0 @@
-<section id="operacoes">
-
-<h2 class="section-title">Operações Reais em Campo</h2>
-
-<img src="images/drone-real-1.jpg" class="image-operacao">
-<img src="images/drone-real-2.jpg" class="image-operacao">
-
-</section>
