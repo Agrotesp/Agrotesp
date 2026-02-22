@@ -1292,72 +1292,69 @@ footer {
    IMAGENS
    ============================================ */
 
-/* topo centralizado */
-.section-topo{
+/* ==========================
+   VANTAGENS (layout exclusivo)
+   ========================== */
+
+#vantagens{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* topo (badge + título + subtítulo) */
+#vantagens .section-topo{
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
-.section-tag{
-  display: inline-block;
-  padding: 6px 14px;
-  border-radius: 999px;
+/* mantém o badge consistente e fora da imagem */
+#vantagens .section-tag{
   background: #e9f5ec;
-  font-weight: 700;
-  font-size: 14px;
-  margin-bottom: 12px;
+  color: var(--primary-dark);
 }
 
-.section-topo h2{
-  font-size: 32px;
-  font-weight: 700;
-}
-
-/* layout desktop */
-.section-header{
+/* grid (imagem + texto) sem quebrar o resto do site */
+.vantagens-grid{
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
+  margin-bottom: 48px;
 }
 
-/* imagem */
-.container-imagem{
-  flex: 1 1 500px;
+#vantagens .container-imagem{
+  flex: 1 1 520px;
+  min-width: 280px;
   display: flex;
   justify-content: center;
 }
 
-.img-vantagens{
+#vantagens .img-vantagens{
   width: 100%;
   max-width: 600px;
-  border-radius: 10px;
   height: auto;
+  border-radius: 10px;
   display: block;
 }
 
-/* texto */
-.section-texto{
-  flex: 1 1 500px;
+#vantagens .section-texto{
+  flex: 1 1 520px;
+  min-width: 280px;
   max-width: 520px;
   line-height: 1.6;
 }
 
 /* mobile */
 @media (max-width: 768px){
-
-  .section-header{
+  .vantagens-grid{
     flex-direction: column;
     text-align: center;
     gap: 20px;
   }
 
-  .section-texto{
+  #vantagens .section-texto{
     max-width: 100%;
   }
-
-  .section-topo h2{
-    font-size: 24px;
-  }
 }
+
