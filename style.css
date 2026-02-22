@@ -1292,11 +1292,52 @@ footer {
    IMAGENS
    ============================================ */
 
-.container-imagem {
-   display: flex;
-   justify-content: center;
+.section-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
 }
-.container-imagem img {
-   max-width: 100%;
-   height: auto;
+
+.container-imagem{
+  flex: 1 1 500px;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.img-vantagens{
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+.section-texto{
+  flex: 1 1 500px;
+  min-width: 280px;
+  max-width: 520px;
+  line-height: 1.6;
+}
+
+.section-tag{
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.9);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+@media (max-width: 768px){
+  .section-header{
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
 }
