@@ -1287,3 +1287,16 @@ footer {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+/* ============================================
+   IMAGENS
+   ============================================ */
+
+.container-imagem {
+   display: flex;
+   justify-content: center;
+}
+.container-imagem img {
+   max-width: 100%;
+   height: auto;
+}
